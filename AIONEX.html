@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AIONEX AI — أتمتة الأعمال بوكلاء الذكاء الاصطناعي</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<style>
+:root{--bg:#050912;--s:#0a111f;--s2:#0e1829;--bd:#16243d;--tx:#f2f6ff;--mu:#8a98b5;--bl:#0a84ff;--bl2:#4aa8ff;--ok:#34d399;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f4f7ff;--s:#fff;--s2:#eef3ff;--bd:#d6e0f5;--tx:#0b1530;--mu:#55648a}}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:"IBM Plex Sans Arabic",system-ui,sans-serif;line-height:1.7;overflow-x:hidden}
+button,input,textarea{font-family:inherit;color:inherit}a{color:inherit;text-decoration:none}
+.w{max-width:1140px;margin:auto;padding:0 22px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 24px;border-radius:10px;border:1px solid var(--bd);background:var(--s);font-weight:600;font-size:15px;cursor:pointer;transition:.2s}
+.btn.b{background:var(--bl);border-color:var(--bl);color:#fff}.btn.w2{background:#fff;color:#050912;border-color:#fff}.btn:hover{filter:brightness(1.12);transform:translateY(-1px)}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(14px)}
+header .w{display:flex;align-items:center;justify-content:space-between;height:78px;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:23px}.logo svg{width:30px;height:30px}
+nav{display:flex;gap:26px;font-size:15px;color:var(--tx)}nav a{opacity:.85}nav a:hover{opacity:1;color:var(--bl2)}
+.act{display:flex;gap:10px}#mb{display:none}
+.hero{text-align:center;padding:50px 0 40px;position:relative}
+.hero:before{content:"";position:absolute;inset:auto 10% -120px;height:420px;background:radial-gradient(closest-side,rgba(10,132,255,.35),transparent);z-index:-1}
+.pill{display:inline-flex;gap:8px;align-items:center;background:var(--s);border:1px solid var(--bd);border-radius:99px;padding:6px 18px;font-size:14px;color:var(--mu)}
+h1{font-size:clamp(34px,6.4vw,66px);line-height:1.25;margin:22px 0;font-weight:700}h1 span{color:var(--bl)}
+.hero p{max-width:600px;margin:0 auto 28px;color:var(--mu);font-size:17px}
+/* dashboard preview */
+.dash{margin:46px auto 0;max-width:1000px;border:1px solid var(--bl);border-radius:22px;background:var(--bg);box-shadow:0 0 0 6px rgba(10,132,255,.12),0 30px 120px rgba(10,132,255,.25);display:grid;grid-template-columns:190px 1fr;overflow:hidden;text-align:start}
+.dash aside{background:var(--s);padding:18px 14px;display:flex;flex-direction:column;gap:8px;border-inline-end:1px solid var(--bd)}
+.dash .logo{font-size:16px;margin-bottom:14px}.dash .logo svg{width:20px;height:20px}
+.sn{border:1px solid transparent;background:none;border-radius:10px;padding:10px 12px;text-align:start;font-size:13px;color:var(--mu);cursor:pointer}
+.sn.on{border-color:var(--bl);color:var(--bl2);background:rgba(10,132,255,.08)}
+.dm{padding:20px;min-height:430px}
+.dt{display:flex;gap:12px;align-items:center;margin-bottom:18px}.dt h3{margin:0;font-size:20px}
+.dt input{flex:1;background:var(--s);border:1px solid var(--bd);border-radius:10px;padding:9px 14px;font-size:13px}
+.dt .btn{padding:8px 16px;font-size:13px;border-color:var(--bl);background:none}
+.kg{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:12px}
+.c{background:var(--s);border:1px solid var(--bd);border-radius:16px;padding:16px}
+.kg .c{display:flex;justify-content:space-between;flex-wrap:wrap}.kg small{color:var(--mu);font-size:12px;display:block;width:100%}.kg b{font-size:24px}
+.sp{width:110px;height:34px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.c h4{margin:0 0 12px;font-weight:500;font-size:15px}
+.bar{margin-bottom:14px;font-size:12px}.bar div:first-child{display:flex;justify-content:space-between;margin-bottom:5px}.bar i{display:block;height:4px;background:var(--bd);border-radius:4px}.bar i b{display:block;height:100%;background:var(--bl);border-radius:4px}
+.li{display:flex;gap:10px;align-items:center;padding:10px;border:1px solid var(--bd);border-radius:12px;margin-bottom:8px;font-size:13px;background:var(--s)}.li em{margin-inline-start:auto;color:var(--ok);font-style:normal;font-size:12px}
+/* sections */
+section{padding:84px 0}h2{font-size:clamp(28px,4.4vw,44px);line-height:1.3;margin:0 0 12px;text-align:center}.sub{color:var(--mu);text-align:center;max-width:620px;margin:0 auto 44px}
+.logos{display:flex;gap:40px;justify-content:center;flex-wrap:wrap;color:var(--mu);font-weight:700;font-size:20px;opacity:.7;padding:30px 0}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.f .ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:rgba(10,132,255,.14);color:var(--bl2);font-size:20px;margin-bottom:12px}.f h3{margin:0 0 6px;font-size:18px}.f p{margin:0;color:var(--mu);font-size:14px}
+.st b{color:var(--bl);font-size:13px}.st h3{margin:4px 0;font-size:16px}.st p{margin:0;color:var(--mu);font-size:13px}
+.pl .pr{font-size:38px;font-weight:700}.pl ul{list-style:none;padding:0;margin:14px 0 22px;color:var(--mu);font-size:14px}.pl li:before{content:"✓ ";color:var(--ok)}.pl .btn{width:100%}.hot{border-color:var(--bl);box-shadow:0 0 50px rgba(10,132,255,.2)}
+details{background:var(--s);border:1px solid var(--bd);border-radius:14px;padding:16px 20px;margin-bottom:10px;max-width:760px;margin-inline:auto}summary{cursor:pointer;font-weight:600}details p{color:var(--mu);margin:10px 0 0}
+.cta{text-align:center;background:radial-gradient(closest-side,rgba(10,132,255,.3),var(--s));border:1px solid var(--bl);border-radius:26px;padding:60px 20px}
+footer{border-top:1px solid var(--bd);padding:36px 0;color:var(--mu);font-size:14px}footer .w{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
+/* modal + chat */
+.ov{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.65);display:none;place-items:center;padding:16px}.ov.on{display:grid}
+.md{background:var(--s);border:1px solid var(--bd);border-radius:20px;padding:26px;width:100%;max-width:420px}.md h3{margin:0 0 14px}
+.md input,.md textarea{width:100%;background:var(--bg);border:1px solid var(--bd);border-radius:10px;padding:11px 14px;margin-bottom:10px;font-size:15px}
+.md .btn{width:100%}.st2{font-size:13px;color:var(--mu);min-height:20px;margin-top:8px}
+#chat{position:fixed;inset:0;z-index:40;background:var(--bg);display:none;grid-template-columns:260px 1fr}#chat.on{display:grid}
+#chat aside{background:var(--s);border-inline-end:1px solid var(--bd);padding:16px;display:flex;flex-direction:column;gap:10px}
+#chat .cm{display:flex;flex-direction:column;height:100%;min-width:0}
+.ch{padding:14px 20px;border-bottom:1px solid var(--bd);display:flex;justify-content:space-between;align-items:center}
+.ms{flex:1;overflow:auto;padding:24px 16px}.in{max-width:740px;margin:auto;display:flex;flex-direction:column;gap:22px}
+.m{white-space:pre-wrap;line-height:1.9;font-size:16px}.m.u{align-self:flex-start;background:var(--s2);border:1px solid var(--bd);padding:10px 16px;border-radius:18px;max-width:85%}
+.m.a{display:flex;gap:12px}.m.a>i{width:28px;height:28px;border-radius:9px;background:var(--bl);flex:none;margin-top:4px}
+.wl{text-align:center;margin-top:12vh}.wl h2{margin:14px 0 6px}.wl .lg{width:54px;height:54px;border-radius:16px;background:var(--bl);margin:auto;box-shadow:0 0 40px rgba(10,132,255,.6)}
+.ib{max-width:740px;width:calc(100% - 32px);margin:0 auto 18px;background:var(--s);border:1px solid var(--bd);border-radius:22px;padding:10px 12px;display:flex;gap:10px;align-items:flex-end}
+.ib textarea{flex:1;background:none;border:0;outline:0;resize:none;font-size:16px;max-height:160px}.ib button{width:38px;height:38px;border-radius:12px;border:0;background:var(--bl);color:#fff;font-size:18px;cursor:pointer}
+.hl{padding:10px 12px;border-radius:10px;background:none;border:0;text-align:start;color:var(--mu);cursor:pointer}.hl:hover{background:var(--s2);color:var(--tx)}
+@media(max-width:860px){nav{display:none}nav.on{display:flex;flex-direction:column;position:absolute;top:78px;inset-inline:0;background:var(--s);padding:18px 22px;border-bottom:1px solid var(--bd)}#mb{display:block}.act .btn.w2{display:none}
+.dash{grid-template-columns:1fr}.dash aside{flex-direction:row;overflow-x:auto;border-inline-end:0;border-bottom:1px solid var(--bd)}.dash .logo{display:none}.kg,.g2,.g3,.g4{grid-template-columns:1fr}#chat{grid-template-columns:1fr}#chat aside{display:none}.dt input{display:none}}
+</style>
+</head>
+<body>
+<header><div class="w">
+<a class="logo" href="#top"><svg viewBox="0 0 32 32" fill="none" stroke="#0a84ff" stroke-width="3.5" stroke-linecap="round"><path d="M6 6h14a6 6 0 010 12H8M4 26h20"/></svg>AIONEX AI</a>
+<nav id="nv"><a href="#top">الرئيسية</a><a href="#features">المنتجات</a><a href="#how">آلية العمل</a><a href="#integ">التكاملات</a><a href="#pricing">الأسعار</a><a href="#faq">الأسئلة</a><a href="#" data-open="chat">الدردشة</a></nav>
+<div class="act"><button class="btn" id="mb">☰</button><button class="btn w2" data-open="login">تسجيل الدخول</button><button class="btn b" data-open="demo">اطلب عرضاً</button></div>
+</div></header>
+
+<main id="top">
+<div class="w hero">
+<span class="pill">🏅 شريك موثوق لأتمتة الأعمال</span>
+<h1>خفّض التكاليف.<br>سرّع <span>العمليات</span>.</h1>
+<p>AIONEX AI ينشر وكلاء ذكاء اصطناعي يؤتمتون العمليات الإدارية والتشغيلية، ويربطون تطبيقاتك، ويوفرون ساعات العمل اليدوي في شركتك.</p>
+<button class="btn b" data-open="demo" style="padding:14px 34px;font-size:17px">ابدأ الآن ←</button>
+
+<div class="dash" id="dash">
+<aside><div class="logo"><svg viewBox="0 0 32 32" fill="none" stroke="#0a84ff" stroke-width="3.5" stroke-linecap="round"><path d="M6 6h14a6 6 0 010 12H8M4 26h20"/></svg>AIONEX AI</div>
+<button class="sn" data-t="start">💡 ابدأ هنا</button><button class="sn on" data-t="rep">📊 التقارير</button><button class="sn" data-t="sup">🛟 الدعم</button><button class="sn" data-t="ppl">👥 الفريق</button><button class="sn" data-t="lib">⚡ المكتبة</button></aside>
+<div class="dm"><div class="dt"><h3 id="dtt">التقارير</h3><input placeholder="🔍 بحث" id="ds"><button class="btn" data-open="demo">+ إنشاء</button></div><div id="dp"></div></div>
+</div>
+</div>
+
+<div class="w logos"><span>Supabase</span><span>Make</span><span>Instagram</span><span>Stripe</span><span>Slack</span><span>Google</span></div>
+
+<section id="features"><div class="w"><h2>كل ما تحتاجه لأتمتة شركتك</h2><p class="sub">وكلاء يفهمون ويخططون ويحللون وينفذون بعد موافقتك، لا مجرد مساعد يجيب.</p>
+<div class="g3" id="feat"></div></div></section>
+
+<section id="how"><div class="w"><h2>دورة عمل متكاملة</h2><p class="sub">ثمان مراحل واضحة، وكل مرحلة مسجلة وقابلة للمراجعة.</p><div class="g4" id="steps"></div></div></section>
+
+<section id="integ"><div class="w"><h2>Automation &amp; Integrations</h2><p class="sub">اربط تطبيقاتك وشغّل Workflows، واستخدم Iterator لمعالجة القوائم، ونفّذ الإجراءات وتحقق منها.</p>
+<div class="g3"><div class="c f"><div class="ic">🔗</div><h3>ربط التطبيقات</h3><p>Supabase وInstagram والبريد والتقويم وغيرها عبر Make.</p></div><div class="c f"><div class="ic">⛓</div><h3>تشغيل Workflows</h3><p>تشغيل تلقائي بالأحداث وسجل كامل لكل تشغيل.</p></div><div class="c f"><div class="ic">✅</div><h3>تنفيذ وتحقق</h3><p>تنفيذ الإجراءات المعتمدة ثم التحقق من النتيجة وتسجيلها.</p></div></div>
+<div class="g4" style="margin-top:18px"><div class="c f"><h3>🔒 الأمان</h3><p>صلاحيات وعزل بيانات.</p></div><div class="c f"><h3>📈 المراقبة</h3><p>تتبع الأداء والتكلفة.</p></div><div class="c f"><h3>🧪 الاختبارات</h3><p>اختبار قبل الإطلاق.</p></div><div class="c f"><h3>🌍 التوسع</h3><p>لشركات دولية.</p></div></div></div></section>
+
+<section id="pricing"><div class="w"><h2>الباقات</h2><p class="sub">اختر باقتك، وستنتقل إلى صفحة دفع آمنة لدى مزود الدفع.</p>
+<div class="g3">
+<div class="c pl"><h3>Starter</h3><div class="pr">$49<small style="font-size:14px;color:var(--mu)"> /شهر</small></div><ul><li>وكيل واحد</li><li>3 تكاملات</li><li>1,000 مهمة شهرياً</li></ul><button class="btn" data-plan="starter">Subscribe</button></div>
+<div class="c pl hot"><h3>Business ★</h3><div class="pr">$199<small style="font-size:14px;color:var(--mu)"> /شهر</small></div><ul><li>5 وكلاء</li><li>تكاملات غير محدودة</li><li>موافقات وتقارير</li><li>10,000 مهمة شهرياً</li></ul><button class="btn b" data-plan="business">Subscribe</button></div>
+<div class="c pl"><h3>Enterprise</h3><div class="pr">مخصص</div><ul><li>وكلاء غير محدودين</li><li>SSO وصلاحيات متقدمة</li><li>دعم مخصص و SLA</li></ul><button class="btn" data-open="demo">تواصل معنا</button></div></div></div></section>
+
+<section id="faq"><div class="w"><h2>الأسئلة الشائعة</h2><p class="sub"></p>
+<details><summary>كيف يتم الدفع؟</summary><p>تختار الباقة وتضغط Subscribe فتنتقل إلى صفحة دفع آمنة، ثم يتحقق الخادم من الدفع ويفتح خدمات باقتك.</p></details>
+<details><summary>هل ينفذ الوكيل دون إذني؟</summary><p>لا. الإجراءات الحساسة تُعرض عليك للموافقة أولاً، ثم تُنفذ ويُتحقق منها.</p></details>
+<details><summary>هل بياناتي آمنة؟</summary><p>يقرأ النظام البيانات المسموح له بها فقط، مع صلاحيات وسجل كامل.</p></details></div></section>
+
+<section><div class="w"><div class="cta"><h2>جاهز لتوفير ساعات عملك؟</h2><p class="sub">احجز عرضاً تجريبياً أو جرّب الدردشة الذكية الآن.</p><button class="btn b" data-open="demo">اطلب عرضاً</button> <button class="btn" data-open="chat">افتح الدردشة</button></div></div></section>
+</main>
+<footer><div class="w"><span>© 2026 AIONEX AI</span><span>الخصوصية · الشروط · الدعم</span></div></footer>
+
+<div class="ov" id="login"><div class="md"><h3>تسجيل الدخول</h3><input id="le" type="email" placeholder="البريد الإلكتروني"><input id="lp" type="password" placeholder="كلمة المرور"><button class="btn b" id="lb">دخول</button><button class="btn" id="ls" style="margin-top:8px">إنشاء حساب</button><div class="st2" id="lst"></div></div></div>
+<div class="ov" id="demo"><div class="md"><h3>اطلب عرضاً تجريبياً</h3><input id="dn" placeholder="الاسم"><input id="de" type="email" placeholder="البريد الإلكتروني"><textarea id="dm" rows="3" placeholder="ماذا تريد أن تؤتمت؟"></textarea><button class="btn b" id="db">إرسال الطلب</button><div class="st2" id="dst"></div></div></div>
+
+<div id="chat"><aside><button class="btn b" id="nc">+ محادثة جديدة</button><button class="hl" data-close>← العودة للموقع</button></aside>
+<div class="cm"><div class="ch"><b>AIONEX AI</b><button class="hl" data-close>✕</button></div><div class="ms" id="ms"><div class="in" id="in"><div class="wl"><div class="lg"></div><h2>كيف يمكنني مساعدتك اليوم؟</h2><p style="color:var(--mu)">اسألني عن أي موضوع.</p></div></div></div>
+<div class="ib"><textarea id="q" rows="1" placeholder="اكتب رسالتك…"></textarea><button id="sd">↑</button></div></div></div>
+
+<script>
+/* ===== الإعدادات ===== */
+const CONFIG={SUPABASE_URL:"",SUPABASE_ANON_KEY:"",CHAT_URL:"",CHECKOUT_URL:""};
+const $=i=>document.getElementById(i),$$=s=>document.querySelectorAll(s);
+const sup=(path,opt={})=>fetch(CONFIG.SUPABASE_URL+path,{...opt,headers:{apikey:CONFIG.SUPABASE_ANON_KEY,Authorization:"Bearer "+CONFIG.SUPABASE_ANON_KEY,"Content-Type":"application/json",...(opt.headers||{})}});
+const ready=()=>CONFIG.SUPABASE_URL&&CONFIG.SUPABASE_ANON_KEY;
+/* مودالات */
+$$("[data-open]").forEach(b=>b.onclick=e=>{e.preventDefault();$(b.dataset.open).classList.add("on");$("nv").classList.remove("on")});
+$$(".ov").forEach(o=>o.onclick=e=>{if(e.target===o)o.classList.remove("on")});
+$$("[data-close]").forEach(b=>b.onclick=()=>$("chat").classList.remove("on"));
+$("mb").onclick=()=>$("nv").classList.toggle("on");
+/* تسجيل الدخول */
+async function auth(kind){const s=$("lst");if(!ready()){s.textContent="اربط Supabase في CONFIG أولاً.";return}
+ s.textContent="جارٍ التنفيذ…";try{const url=kind==="in"?"/auth/v1/token?grant_type=password":"/auth/v1/signup";
+ const r=await sup(url,{method:"POST",body:JSON.stringify({email:$("le").value,password:$("lp").value})});const d=await r.json();
+ if(r.ok){s.textContent=kind==="in"?"تم تسجيل الدخول ✓":"تم إنشاء الحساب، تحقق من بريدك ✓";if(d.access_token)localStorage.setItem("aionex_session",d.access_token)}else s.textContent=d.msg||d.error_description||"فشل الطلب"}catch(e){s.textContent="تعذر الاتصال"}}
+$("lb").onclick=()=>auth("in");$("ls").onclick=()=>auth("up");
+/* طلب عرض */
+$("db").onclick=async()=>{const s=$("dst");if(!$("de").value){s.textContent="أدخل بريدك";return}
+ if(!ready()){s.textContent="اربط Supabase في CONFIG أولاً.";return}
+ try{const r=await sup("/rest/v1/demo_requests",{method:"POST",headers:{Prefer:"return=minimal"},body:JSON.stringify({name:$("dn").value,email:$("de").value,message:$("dm").value})});s.textContent=r.ok?"وصل طلبك، سنتواصل معك ✓":"تعذر الإرسال"}catch(e){s.textContent="تعذر الاتصال"}};
+/* الدفع */
+$$("[data-plan]").forEach(b=>b.onclick=async()=>{if(!CONFIG.CHECKOUT_URL){alert("ضع رابط دالة الدفع في CONFIG.CHECKOUT_URL");return}
+ try{const r=await fetch(CONFIG.CHECKOUT_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({plan:b.dataset.plan,token:localStorage.getItem("aionex_session")})});const d=await r.json();if(d.url)location.href=d.url}catch(e){alert("تعذر بدء الدفع")}});
+/* محتوى الأقسام */
+$("feat").innerHTML=[["🧠","وكلاء مستقلون","يفهمون هدفك ويقسمونه إلى مهام ويحللون بياناتك."],["🔍","كشف المشكلات","يحدد المشكلات ويقدم الأدلة عليها."],["💡","حلول مقارنة","يقترح الحلول ويقارن بينها قبل أي تنفيذ."],["🛡","موافقة العميل","الإجراءات الحساسة لا تنفذ دون موافقتك."],["⚙️","تنفيذ آلي","ينفذ الإجراءات المعتمدة عبر الأدوات المتصلة."],["📑","تقارير وإشعارات","تقارير جاهزة وإشعارات فورية."]].map(f=>`<div class="c f"><div class="ic">${f[0]}</div><h3>${f[1]}</h3><p>${f[2]}</p></div>`).join("");
+$("steps").innerHTML=[["Task Understanding","فهم الطلب وتحديد الهدف"],["Planning","تقسيم الهدف إلى مهام مرتبة"],["Data Analysis","تحليل البيانات المسموحة"],["Problem Detection","تحديد المشكلات بالأدلة"],["Solution Generation","اقتراح الحلول والمقارنة"],["Approval","عرض الإجراءات للموافقة"],["Execution","تنفيذ الإجراءات المعتمدة"],["Verification","التحقق وتسجيل النتيجة"]].map((s,i)=>`<div class="c st"><b>0${i+1}</b><h3>${s[0]}</h3><p>${s[1]}</p></div>`).join("");
+/* لوحة المعاينة */
+const spark=s=>{const p=[12,20,14,22,16,26,20,30,24,34].map((y,i)=>`${i*12+s},${40-y}`).join(" ");return`<svg class="sp" viewBox="0 0 120 40"><polyline points="${p}" fill="none" stroke="#0a84ff" stroke-width="2"/></svg>`};
+const kp=(n,v)=>`<div class="c"><small>${n}</small><b>${v}</b>${spark(0)}</div>`;
+const P={
+rep:["التقارير",`<div class="kg">${kp("التسويق","+75%")}${kp("المشتريات","+80%")}${kp("المبيعات","+67%")}</div><div class="g2"><div class="c"><h4>التحليلات التنبؤية</h4><svg viewBox="0 0 300 120" style="width:100%"><path d="M0 100C40 90 60 40 100 60S160 100 200 50 260 20 300 30V120H0Z" fill="rgba(10,132,255,.2)"/><path d="M0 100C40 90 60 40 100 60S160 100 200 50 260 20 300 30" fill="none" stroke="#0a84ff" stroke-width="2.5"/></svg></div><div class="c"><h4>أقوى المسارات</h4><div class="bar"><div><span>معالجة البيانات</span><span>79%</span></div><i><b style="width:79%"></b></i></div><div class="bar"><div><span>الفواتير</span><span>64%</span></div><i><b style="width:64%"></b></i></div><div class="bar"><div><span>الدعم</span><span>51%</span></div><i><b style="width:51%"></b></i></div></div></div>`],
+start:["ابدأ هنا",["اربط Supabase","اربط Make وInstagram","أنشئ أول Workflow","فعّل موافقات الإجراءات"].map((t,i)=>`<div class="li">0${i+1} · ${t}<em>${i<2?"✓ جاهز":"قيد الانتظار"}</em></div>`).join("")],
+sup:["الدعم",`<div class="li">🎧 وكيل الدعم<em>● سليم 98.2%</em></div><div class="li">📄 وكيل المستندات<em>● سليم 97.1%</em></div><div class="li">🛡 وكيل السياسات<em>● سليم 99.0%</em></div><button class="btn" data-open="demo">تواصل مع فريق الدعم</button>`],
+ppl:["الفريق",`<div class="li">👤 مدير المنصة<em>مسؤول</em></div><div class="li">👤 محلل البيانات<em>محرر</em></div><div class="li">👤 مراجع الموافقات<em>مراجع</em></div>`],
+lib:["المكتبة",["تقرير المبيعات الأسبوعي","أتمتة الرد على Instagram","فرز الفواتير","تنبيه ارتفاع التكلفة"].map(t=>`<div class="li">⚡ ${t}<em>قالب</em></div>`).join("")]};
+function show(t){$$(".sn").forEach(b=>b.classList.toggle("on",b.dataset.t===t));$("dtt").textContent=P[t][0];$("dp").innerHTML=P[t][1];$$("#dp [data-open]").forEach(b=>b.onclick=()=>$("demo").classList.add("on"))}
+$$(".sn").forEach(b=>b.onclick=()=>show(b.dataset.t));show("rep");
+/* الدردشة العامة */
+let hist=[],busy=false;
+const add=(c,t)=>{const d=document.createElement("div");d.className="m "+c;if(c==="a"){d.innerHTML="<i></i><div></div>";d.lastChild.textContent=t}else d.textContent=t;$("in").append(d);$("ms").scrollTop=1e9;return d};
+async function send(){const v=$("q").value.trim();if(!v||busy)return;busy=true;$("q").value="";const w=document.querySelector(".wl");if(w)w.remove();
+ add("u",v);hist.push({role:"user",content:v});const a=add("a","…");let r="";
+ if(!CONFIG.CHAT_URL)r="هذا رد تجريبي. اربط CHAT_URL بدالة الخادم لأتحدث معك فعلياً.";
+ else try{const x=await fetch(CONFIG.CHAT_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({messages:hist})});r=(await x.json()).reply||"لم أستطع الرد."}catch(e){r="تعذر الاتصال بالخادم."}
+ a.lastChild.textContent=r;hist.push({role:"assistant",content:r});busy=false;$("ms").scrollTop=1e9}
+$("sd").onclick=send;$("q").onkeydown=e=>{if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();send()}};
+$("q").oninput=()=>{$("q").style.height="auto";$("q").style.height=$("q").scrollHeight+"px"};
+$("nc").onclick=()=>{hist=[];$("in").innerHTML='<div class="wl"><div class="lg"></div><h2>كيف يمكنني مساعدتك اليوم؟</h2></div>'};
+</script>
+</body>
+</html>
